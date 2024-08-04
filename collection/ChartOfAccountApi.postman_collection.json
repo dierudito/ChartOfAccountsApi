@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "fc88d84a-c7b7-418f-aae6-55574f1f667a",
+		"name": "ChartOfAccountApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5438181"
+	},
+	"item": [
+		{
+			"name": "Conta",
+			"item": [
+				{
+					"name": "Obter lista com código",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accounts/listWithCodeGroup?onlyParents=false&pageNumber=1&pageSize=25",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accounts",
+								"listWithCodeGroup"
+							],
+							"query": [
+								{
+									"key": "onlyParents",
+									"value": "false"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sugestão próximo código",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accounts/nextCode/34E4DCF9-7740-45E0-84C9-6CCCB635FDB4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accounts",
+								"nextCode",
+								"34E4DCF9-7740-45E0-84C9-6CCCB635FDB4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accounts/7b1c509c-fe9e-41cb-83dd-94e98e910d23",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accounts",
+								"7b1c509c-fe9e-41cb-83dd-94e98e910d23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codeGroup\": \"1\",\n  \"name\": \"Teste\",\n  \"idAccountType\": \"7872298C-CCCD-42AD-B4C7-FC5AD7F042F5\",\n  \"acceptEntries\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7248/v1/accounts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Serach",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accounts/search?searchTerm=2&pageNumber=1&pageSize=25",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accounts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "2"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipos de Conta",
+			"item": [
+				{
+					"name": "Obter Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accountTypes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accountTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7248/v1/accountTypes/34E4DCF9-7740-45E0-84C9-6CCCB635FDB4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7248",
+							"path": [
+								"v1",
+								"accountTypes",
+								"34E4DCF9-7740-45E0-84C9-6CCCB635FDB4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

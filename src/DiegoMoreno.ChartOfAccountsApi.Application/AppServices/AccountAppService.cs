@@ -34,7 +34,7 @@ public class AccountAppService(
 
         if (account.IdParentAccount.HasValue)
         {
-            var parentAccount = await accountRepository.GetByIdAsync(requestDto.IdParentAccount.Value);
+            var parentAccount = await accountRepository.GetByIdAsync(requestDto.IdParentAccount!.Value);
 
             if (parentAccount == null || parentAccount.AcceptEntries)
                 return new Response<AddAccountResponseDto>(null, HttpStatusCode.BadRequest,
@@ -108,7 +108,7 @@ public class AccountAppService(
             : message;
 
         return new Response<NextAccountCodeResponseDto>(
-            new(newSuggestedCode.suggestedCode, newSuggestedCode.account), statusCode, message);
+            new(newSuggestedCode.suggestedCode!, newSuggestedCode.account), statusCode, message);
     }
 
     public async Task<Response<GetListAccountWithCodeGroupResponseDto>> 

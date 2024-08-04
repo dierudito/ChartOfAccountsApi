@@ -23,7 +23,7 @@ public class AccountServiceTest
         _accountService = mocker.CreateInstance<AccountService>();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return 1 when parent account ID is null")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenParentAccountIdIsNull_ShouldReturn1()
     {
@@ -37,7 +37,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return 1 when no account is found for the parent account ID")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task AccountService_WhenThereIsAccount_ShouldReturn1()
     {
@@ -51,7 +51,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return a code group with '1' when there are no child accounts")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenThereArentChild_ShouldReturnCodeGroupCorrectly()
     {
@@ -76,7 +76,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return the next sequential code group when one child account exists")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenThereAreOneChild_ShouldReturnCodeGroupCorrectly()
     {
@@ -115,7 +115,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return the next sequential code group when multiple child accounts exist")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenThereAreManyChildren_ShouldReturnCodeGroupCorrectly()
     {
@@ -163,7 +163,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should include the grandparent code when the parent account has a parent")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenThereIsHigherLevel_ShouldReturnCodeGroupCorrectly()
     {
@@ -215,7 +215,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should include all ancestor codes when multiple levels of hierarchy exist")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenThereAreHigherLevels_ShouldReturnCodeGroupCorrectly()
     {
@@ -280,7 +280,7 @@ public class AccountServiceTest
         codeGroup.Should().Be(expectedCodeGroup);
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next Code should return an empty code group when the child code is at the maximum limit")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextCodeAsync))]
     public async Task CalculateNextCode_WhenTheChildCodIsAtTheLimit_ShouldReturnEmptyCodeGroup()
     {
@@ -315,9 +315,9 @@ public class AccountServiceTest
         codeGroup.Should().BeNullOrWhiteSpace();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next New Parent Code should return an empty code when the account has no children")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextNewParentCodeAsync))]
-    public async Task CalculateNextNewParentCode_WhenAccounHasNoChildren_ShouldReturnEmptyCode()
+    public async Task CalculateNextNewParentCode_WhenAccountHasNoChildren_ShouldReturnEmptyCode()
     {
         // Arrange
         var currentAccountId = Guid.NewGuid();
@@ -333,9 +333,9 @@ public class AccountServiceTest
         suggestedCode.Should().BeEmpty();
     }
 
-    [Fact]
+    [Fact(DisplayName = "Calculate Next New Parent Code should return a code when the account has children")]
     [Trait(nameof(AccountService), nameof(AccountService.CalculateNextNewParentCodeAsync))]
-    public async Task CalculateNextNewParentCode_WhenAccounHasNoChildren_ShouldReturnCode()
+    public async Task CalculateNextNewParentCode_WhenAccountHasChildren_ShouldReturnCode()
     {
         // Arrange
         var currentAccountId = Guid.NewGuid();
