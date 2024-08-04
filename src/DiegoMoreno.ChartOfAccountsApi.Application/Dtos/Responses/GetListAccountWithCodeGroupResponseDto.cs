@@ -1,0 +1,2 @@
+﻿namespace DiegoMoreno.ChartOfAccountsApi.Application.Dtos.Responses;
+public record GetListAccountWithCodeGroupResponseDto(List<AccountWithCodeGroupDto> Accounts, PaginationOutputDto Pagination);

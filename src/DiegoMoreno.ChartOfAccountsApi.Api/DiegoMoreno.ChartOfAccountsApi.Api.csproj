@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>187509c3-208c-475b-87e8-6d44442ee752</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DiegoMoreno.ChartOfAccountsApi.Infra.CrossCutting.IoC\DiegoMoreno.ChartOfAccountsApi.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\DiegoMoreno.ChartOfAccountsApi.Application\DiegoMoreno.ChartOfAccountsApi.Application.csproj" />
+    <ProjectReference Include="..\DiegoMoreno.ChartOfAccountsApi.Infra.CrossCutting.Shared\DiegoMoreno.ChartOfAccountsApi.Infra.CrossCutting.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
