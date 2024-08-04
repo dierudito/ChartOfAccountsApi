@@ -65,9 +65,9 @@ Você tem duas opções para interagir com a API:
 ```JSON
 {
 "codeGoup": "1",
-"name": <Coloque aqui um nome para identificar sua conta>,
-"idAccountType": <Coloque aqui o Id obtido no endpoint /v1/accountTypes>,
-"acceptEntries": false <- As contas que podem ser pai não podem aceitar lançamentos
+"name": "<Coloque aqui um nome para identificar sua conta>",
+"idAccountType": "<Coloque aqui o Id obtido no endpoint /v1/accountTypes>",
+"acceptEntries": false //<- As contas que podem ser pai não podem aceitar lançamentos
 }
 ```
 
@@ -93,11 +93,11 @@ Você tem duas opções para interagir com a API:
     * Aqui você deverá executar o endpoint POST `/v1/accounts`, conforme as orientações anteriores. A mudança será no corpo da requisição, que você deverá preencher com um JSON parecido com este:
 ```JSON
 {
-"idParentAccount": <Coloque aqui o Id (Guid) da primeira conta criada>,
+"idParentAccount": "<Coloque aqui o Id (Guid) da primeira conta criada>",
 "codeGoup": "<Envie aqui o suggestedCode obtido no endpoint que sugere o próximo código>",
-"name": <Coloque aqui um nome para identificar sua conta>,
-"idAccountType": <Coloque aqui o Id obtido no endpoint /v1/accountTypes>,
-"acceptEntries": <Aqui você poderá colocar true ou false>
+"name": "<Coloque aqui um nome para identificar sua conta>",
+"idAccountType": "<Coloque aqui o Id obtido no endpoint /v1/accountTypes>",
+"acceptEntries": "<Aqui você poderá colocar true ou false>"
 }
 ```
 
